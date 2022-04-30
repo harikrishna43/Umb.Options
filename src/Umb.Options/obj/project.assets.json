@@ -8616,7 +8616,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "E:\\Projects\\Plugins\\U9\\UMB.Options\\src\\Umb.Options\\Umb.Options.csproj",
-      "projectName": "Umb.Options",
+      "projectName": "Umb.Option",
       "projectPath": "E:\\Projects\\Plugins\\U9\\UMB.Options\\src\\Umb.Options\\Umb.Options.csproj",
       "packagesPath": "C:\\Users\\krish\\.nuget\\packages\\",
       "outputPath": "E:\\Projects\\Plugins\\U9\\UMB.Options\\src\\Umb.Options\\obj\\",
@@ -8647,6 +8647,9 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreLockProperties": {
+        "restorePackagesWithLockFile": "true"
       }
     },
     "frameworks": {

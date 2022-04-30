@@ -1,64 +1,81 @@
-<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
-        <ContentTargetFolders>.</ContentTargetFolders>
-        <Product>Umb.Options</Product>
-        <PackageId>Umb.Options</PackageId>
-        <Title>Umb.Options</Title>
-        <Description>...</Description>
-        <Product>...</Product>
-        <PackageTags>umbraco plugin package</PackageTags>
-        <RootNamespace>Umb.Options</RootNamespace>
-    </PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <ContentTargetFolders>App_Plugins</ContentTargetFolders>
+    <Product>Umb.Option</Product>
+    <PackageId>Umb.Option</PackageId>
+    <PackageTags>Umbraco, Unicorn, Madnat Technologies</PackageTags>
+    <Title>Umb.Option</Title>
+    <Description>The options to set for styling umbraco website</Description>
+    <Product>Umbraco 9 Package</Product>
+    <RootNamespace>Umb.Option</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>Harikrishna Parmar</Authors>
+    <Company>Harikrishna Parmar</Company>
+    <Copyright>Copyright © 2022</Copyright>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageProjectUrl>https://github.com/harikrishna43/Umb.Options</PackageProjectUrl>
+    <PackageIcon></PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/harikrishna43/Umb.Options</RepositoryUrl>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <Target Name="UmbPack" AfterTargets="Pack">
+    <Exec Command="umbpack pack package.xml -v $(Version) -o $(PackageOutputPath) -p Configuration=$(Configuration)" />
+  </Target>
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.3.1" />
+    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.3.1" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.3.1" />
-        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.3.1" />
-    </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\App_Plugins\Umb.Options\**\*.*">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+    <None Include="build\**\*.*">
+      <Pack>True</Pack>
+      <PackagePath>buildTransitive</PackagePath>
+    </None>
+  </ItemGroup>
 
-    <ItemGroup>
-        <Content Include="App_Plugins\Umb.Options\**\*.*">
-            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
-        </Content>
-        <None Include="build\**\*.*">
-            <Pack>True</Pack>
-            <PackagePath>buildTransitive</PackagePath>
-        </None>
-    </ItemGroup>
+  <ItemGroup>
+    <None Remove="content\App_Plugins\Umb.Options\css\style.css" />
+    <None Remove="content\App_Plugins\Umb.Options\js\Umb.options.js" />
+    <None Remove="content\App_Plugins\Umb.Options\Prevalues\prevalues.html" />
+    <None Remove="content\App_Plugins\Umb.Options\Prevalues\prevaluescontroller.js" />
+    <None Remove="content\App_Plugins\Umb.Options\PropertyEditor\editor.html" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <None Remove="App_Plugins\Umb.Options\css\style.css" />
-      <None Remove="App_Plugins\Umb.Options\js\Umb.options.js" />
-      <None Remove="App_Plugins\Umb.Options\Prevalues\prevalues.html" />
-      <None Remove="App_Plugins\Umb.Options\Prevalues\prevaluescontroller.js" />
-      <None Remove="App_Plugins\Umb.Options\PropertyEditor\editor.html" />
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="UmbOptionEnum.cs" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <None Include="UmbOptionEnum.cs" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Update="App_Plugins\Umb.Options\css\style.css">
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
-      </Content>
-      <Content Update="App_Plugins\Umb.Options\js\Umb.options.js">
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
-      </Content>
-      <Content Update="App_Plugins\Umb.Options\Prevalues\prevalues.html">
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
-      </Content>
-      <Content Update="App_Plugins\Umb.Options\Prevalues\prevaluescontroller.js">
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
-      </Content>
-      <Content Update="App_Plugins\Umb.Options\PropertyEditor\editor.html">
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
-      </Content>
-    </ItemGroup>
+  <ItemGroup>
+    <Content Update="content\App_Plugins\Umb.Options\css\style.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+    <Content Update="content\App_Plugins\Umb.Options\js\Umb.options.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+    <Content Update="content\App_Plugins\Umb.Options\Prevalues\prevalues.html">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+    <Content Update="content\App_Plugins\Umb.Options\Prevalues\prevaluescontroller.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+    <Content Update="content\App_Plugins\Umb.Options\PropertyEditor\editor.html">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
