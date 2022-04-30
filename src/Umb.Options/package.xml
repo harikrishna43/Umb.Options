@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<umbPackage>
+	<info>
+		<package>
+			<name>Umb.Options</name>
+			<licence>MIT</licence>
+			<url></url>
+			<requirements type="strict">
+				<major>1</major>
+				<minor>0</minor>
+				<patch>3</patch>
+			</requirements>
+		</package>
+		<author>
+			<name>Harikrishna Parmar</name>
+			<website>https://www.harikrishnaparmar.co.in</website>
+		</author>
+		<readme><![CDATA[A package that will help to get options to set up views layouts]]></readme>
+	</info>
+	<files>
+		<folder path="content/App_Plugins/Umb.Options" orgPath="App_Plugins/Umb.Options" />
+		<file path="bin/$Configuration$/net5.0/Umb.Options.dll" orgPath="bin/Umb.Options.dll" />
+	</files>
+</umbPackage>
+
