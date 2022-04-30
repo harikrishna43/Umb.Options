@@ -25,9 +25,9 @@
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
-  <Target Name="UmbPack" AfterTargets="Pack">
+  <!--<Target Name="UmbPack" AfterTargets="Pack">
     <Exec Command="umbpack pack package.xml -v $(Version) -o $(PackageOutputPath) -p Configuration=$(Configuration)" />
-  </Target>
+  </Target>-->
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.3.1" />
     <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.3.1" />
