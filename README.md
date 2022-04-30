@@ -2,7 +2,6 @@
 
 Umb.Options is a package that adds a new 'Styling layouts' visual icons option to your Umbraco instance with customise the backoffice.
 List of Options:
-https://www.awesomescreenshot.com/video/8681415?key=335934a581eafd2388db05b3dfb37444
 
 # 1. Layouts
 ![image](https://user-images.githubusercontent.com/3711059/166117321-e74d0aae-5c52-4e28-aa55-fc80346ebdb1.png)
