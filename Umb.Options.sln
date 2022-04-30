@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umb.Options", "src\Umb.Options\Umb.Options.csproj", "{48F73A18-6FD5-402D-B47F-A59A3AB3B447}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{3FEC3F39-6ACA-4A32-96ED-8F0EFACB4B01}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build.yml = .github\workflows\build.yml
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		.github\workflows\prepare-release.yml = .github\workflows\prepare-release.yml
+		.github\workflows\publish-release.yml = .github\workflows\publish-release.yml
+		.github\workflows\publish.yml = .github\workflows\publish.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48F73A18-6FD5-402D-B47F-A59A3AB3B447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F73A18-6FD5-402D-B47F-A59A3AB3B447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F73A18-6FD5-402D-B47F-A59A3AB3B447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F73A18-6FD5-402D-B47F-A59A3AB3B447}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77320541-8F42-424B-95FB-291D9ACC9F2D}
+	EndGlobalSection
+EndGlobal

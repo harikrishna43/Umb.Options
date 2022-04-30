@@ -1,0 +1,39 @@
+﻿{
+  "propertyEditors": [
+    {
+      /*this must be a unique alias*/
+      "alias": "umbOptions",
+      /*the name*/
+      "name": "Umbraco Page Styling Options",
+      /*the icon*/
+      "icon": "icon-list",
+      /*grouping for "Select editor" dialog*/
+      "group": "Common",
+      /*the HTML file we will load for the editor*/
+      "editor": {
+        "view": "~/App_Plugins/Umb.Options/PropertyEditor/editor.html"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Select option type",
+            "key": "optionType",
+            "view": "~/App_Plugins/Umb.Options/Prevalues/prevalues.html",
+            "validation": [
+              {
+                "type": "Required"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "javascript": [
+    "~/App_Plugins/Umb.Options/js/Umb.options.js",
+    "~/App_Plugins/Umb.Options/Prevalues/prevaluescontroller.js"
+  ],
+  "css": [
+    "~/App_Plugins/Umb.Options/css/style.css"
+  ]
+}

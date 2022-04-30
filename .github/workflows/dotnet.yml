@@ -1,0 +1,38 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+env:
+    DOTNET_NOLOGO: true
+    DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+    PROJECT: ./src/Umb.Options/Umb.Options.csproj
+    OUTPUT: ./dist
+jobs:
+  build:
+
+    runs-on:  windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+
+    #- name: Cache NuGet packages
+    #  uses: actions/cache@v3
+    #  with:
+    #    path: ~/.nuget/packages
+    #    key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build ${{ env.PROJECT }} --no-restore
+    - name: release package
+      run: dotnet build ${{ env.PROJECT }} --configuration Release /t:rebuild /t:pack -p:BuildTools=1 -p:PackageOutputPath=/releases/nuget

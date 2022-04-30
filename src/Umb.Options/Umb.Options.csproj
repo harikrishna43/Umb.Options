@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <ContentTargetFolders>.</ContentTargetFolders>
+        <Product>Umb.Options</Product>
+        <PackageId>Umb.Options</PackageId>
+        <Title>Umb.Options</Title>
+        <Description>...</Description>
+        <Product>...</Product>
+        <PackageTags>umbraco plugin package</PackageTags>
+        <RootNamespace>Umb.Options</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.3.1" />
+        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="App_Plugins\Umb.Options\**\*.*">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+        </Content>
+        <None Include="build\**\*.*">
+            <Pack>True</Pack>
+            <PackagePath>buildTransitive</PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="App_Plugins\Umb.Options\css\style.css" />
+      <None Remove="App_Plugins\Umb.Options\js\Umb.options.js" />
+      <None Remove="App_Plugins\Umb.Options\Prevalues\prevalues.html" />
+      <None Remove="App_Plugins\Umb.Options\Prevalues\prevaluescontroller.js" />
+      <None Remove="App_Plugins\Umb.Options\PropertyEditor\editor.html" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="UmbOptionEnum.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="App_Plugins\Umb.Options\css\style.css">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+      </Content>
+      <Content Update="App_Plugins\Umb.Options\js\Umb.options.js">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+      </Content>
+      <Content Update="App_Plugins\Umb.Options\Prevalues\prevalues.html">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+      </Content>
+      <Content Update="App_Plugins\Umb.Options\Prevalues\prevaluescontroller.js">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+      </Content>
+      <Content Update="App_Plugins\Umb.Options\PropertyEditor\editor.html">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+</Project>

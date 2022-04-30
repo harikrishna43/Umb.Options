@@ -1,0 +1,27 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <UmbOptionsContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\Umb.Options\**\*.*</UmbOptionsContentFilesPath>
+    </PropertyGroup>
+
+    <Target Name="CopyUmbOptionsAssets" BeforeTargets="Build">
+        <ItemGroup>
+            <UmbOptionsContentFiles Include="$(UmbOptionsContentFilesPath)" />
+        </ItemGroup>
+        <Message Text="Copying Umb.Options files: $(UmbOptionsContentFilesPath) - #@(UmbOptionsContentFiles->Count()) files"  Importance="high" />
+        <Copy
+            SourceFiles="@(UmbOptionsContentFiles)"
+            DestinationFiles="@(UmbOptionsContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\Umb.Options\%(RecursiveDir)%(Filename)%(Extension)')"
+            SkipUnchangedFiles="true" />
+
+    </Target>
+
+    <Target Name="ClearUmbOptionsAssets" BeforeTargets="Clean">
+        <ItemGroup>
+            <UmbOptionsDir Include="$(MSBuildProjectDirectory)\App_Plugins\Umb.Options\" />
+        </ItemGroup>
+        <Message Text="Clear old Umb.Options data"  Importance="high" />
+        <RemoveDir Directories="@(UmbOptionsDir)"  />
+    </Target>
+
+</Project>
