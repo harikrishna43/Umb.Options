@@ -12,7 +12,7 @@ env:
 jobs:
   build:
     name: Build
-    uses: harikrishna43/Umb.Options/.github/workflows/build.yml@master
+    uses: harikrishna43/Umb.Options/.github/workflows/build.yml@main
     
   publish:
     name: Publish
@@ -35,7 +35,7 @@ jobs:
 
       - name: Push to Our.Umbraco
         if: steps.get_package.outputs.PACKAGE
-        run: ./umbpack push ${{ steps.get_package.outputs.PACKAGE }} -k ${{ secrets.OURUMBRACO_API_KEY }} -a *
+        run: ./umbpack push ${{ steps.get_package.outputs.PACKAGE }} -k ${{ secrets.UMB_KEY }} -a *
 
       - name: Push to NuGet
         run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
