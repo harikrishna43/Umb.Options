@@ -22,7 +22,8 @@
     <RepositoryUrl>https://github.com/harikrishna43/Umb.Options</RepositoryUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
-    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <Target Name="UmbPack" AfterTargets="Pack">
     <Exec Command="umbpack pack package.xml -v $(Version) -o $(PackageOutputPath) -p Configuration=$(Configuration)" />
