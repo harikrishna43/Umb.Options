@@ -1,1 +1,1 @@
-# Umb.Options
+# Umb.Options [![Publish](https://github.com/harikrishna43/Umb.Options/actions/workflows/publish.yml/badge.svg?branch=main&event=release)](https://github.com/harikrishna43/Umb.Options/actions/workflows/publish.yml)
