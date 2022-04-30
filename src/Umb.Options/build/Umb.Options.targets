@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
     <PropertyGroup>
-        <UmbOptionsContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\Umb.Options\**\*.*</UmbOptionsContentFilesPath>
+        <UmbOptionsContentFilesPath>$(MSBuildThisFileDirectory)..\content\App_Plugins\Umb.Options\**\*.*</UmbOptionsContentFilesPath>
     </PropertyGroup>
 
     <Target Name="CopyUmbOptionsAssets" BeforeTargets="Build">
