@@ -1,4 +1,4 @@
-# Umb.Options [![Publish](https://github.com/harikrishna43/Umb.Options/actions/workflows/publish.yml/badge.svg?branch=main&event=release)](https://github.com/harikrishna43/Umb.Options/actions/workflows/publish.yml)
+# Umb.Options [![Publish](https://github.com/harikrishna43/Umb.Options/actions/workflows/publish.yml/badge.svg)](https://github.com/harikrishna43/Umb.Options/actions/workflows/publish.yml)
 
 Umb.Options is a package that adds a new 'Styling layouts' visual icons option to your Umbraco instance with customise the backoffice.
 List of Options:
