@@ -2,14 +2,14 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <ContentTargetFolders>.</ContentTargetFolders>
-    <Product>Umb.Option</Product>
-    <PackageId>Umb.Option</PackageId>
+    <Product>Umb.Options</Product>
+    <PackageId>Umb.Options</PackageId>
     <PackageTags>Umbraco9</PackageTags>
-    <Title>Umb.Option</Title>
+    <Title>Umb.Options</Title>
     <Description>The options to set for styling umbraco website</Description>
     <Product>Umbraco 9 Package</Product>
     <RootNamespace>Umb.Options</RootNamespace>
-    <Version>1.0.2</Version>
+    <Version>1.0.0</Version>
     <Authors>Harikrishna Parmar</Authors>
     <Company>Harikrishna Parmar</Company>
     <Copyright>Copyright © 2022</Copyright>
