@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <ContentTargetFolders>content</ContentTargetFolders>
+    <ContentTargetFolders>.</ContentTargetFolders>
     <Product>Umb.Option</Product>
     <PackageId>Umb.Option</PackageId>
     <PackageTags>Umbraco9</PackageTags>
