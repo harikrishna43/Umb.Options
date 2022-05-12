@@ -15,10 +15,10 @@ namespace Umb.Options.Composer
         {
             //If the type is not accessible you will need to locate the instance and then remove it:
             var contentPickerValueConverter = builder.PropertyValueConverters().GetTypes().FirstOrDefault(x => x.Name == nameof(UmbOptionsValueConverter));
-            if (contentPickerValueConverter != null)
-            {
-                builder.PropertyValueConverters().Remove(contentPickerValueConverter);
-            }
+            //if (contentPickerValueConverter != null)
+            //{
+            //    builder.PropertyValueConverters().Remove(contentPickerValueConverter);
+            //}
         }
     }
 }
