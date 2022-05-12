@@ -8,9 +8,20 @@ using Umbraco.Cms.Core.PublishedCache;
 
 namespace Umb.Options.PropertyValueConverters
 {
-    public class UmbOptionsValueConverter : IPropertyValueConverter
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+    public class UmbOptionsValueConverter : PropertyValueConverterBase
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
-        public object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="propertyType"></param>
+        /// <param name="referenceCacheLevel"></param>
+        /// <param name="inter"></param>
+        /// <param name="preview"></param>
+        /// <returns></returns>
+        public override object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
         {
             if (inter == null)
                 return null;
@@ -131,12 +142,29 @@ namespace Umb.Options.PropertyValueConverters
             return (object)UmbEnum.UmbOptions.EMPTY;
         }
 
-        public object ConvertIntermediateToXPath(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="propertyType"></param>
+        /// <param name="referenceCacheLevel"></param>
+        /// <param name="inter"></param>
+        /// <param name="preview"></param>
+        /// <returns></returns>
+        public override object ConvertIntermediateToXPath(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview)
         {
             return inter != null ? (object)(string)inter : (object)String.Empty;
         }
 
-        public object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="propertyType"></param>
+        /// <param name="source"></param>
+        /// <param name="preview"></param>
+        /// <returns></returns>
+        public override object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview)
         {
             source = source ?? String.Empty;
             string str = source.ToString();
@@ -254,13 +282,34 @@ namespace Umb.Options.PropertyValueConverters
             return (object)UmbEnum.UmbOptions.EMPTY;
         }
 
-        public PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType) => PropertyCacheLevel.Element;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="propertyType"></param>
+        /// <returns></returns>
+        public override PropertyCacheLevel GetPropertyCacheLevel(IPublishedPropertyType propertyType) => PropertyCacheLevel.Element;
 
-        public Type GetPropertyValueType(IPublishedPropertyType propertyType) => typeof(UmbEnum.UmbOptions);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="propertyType"></param>
+        /// <returns></returns>
+        public override Type GetPropertyValueType(IPublishedPropertyType propertyType) => typeof(UmbEnum.UmbOptions);
 
-        public bool IsConverter(IPublishedPropertyType propertyType) => propertyType.EditorAlias == "umbOptions";
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="propertyType"></param>
+        /// <returns></returns>
+        public override bool IsConverter(IPublishedPropertyType propertyType) => propertyType.EditorAlias == "umbOptions";
 
-        public bool? IsValue(object value, PropertyValueLevel level)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="level"></param>
+        /// <returns></returns>
+        public override bool? IsValue(object value, PropertyValueLevel level)
         {
             return value != null;
         }
