@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <ContentTargetFolders>.</ContentTargetFolders>
@@ -30,7 +30,7 @@
   </Target>
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.3.1" />
-    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.3.1" />
+    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="10.6.1" />
   </ItemGroup>
 
   <ItemGroup>
